@@ -19,7 +19,14 @@ Personal Claude Code marketplace for externally-hosted plugins.
 
 ## Development
 
-**Dependencies:** `jq`, `gh` (authenticated), `base64`, `awk`
+**Dependencies:** `jq`, `gh` (authenticated), `base64`, `awk`, `shellcheck`, `shfmt`
+
+Lint and format scripts:
+
+```sh
+shellcheck scripts/*.sh
+shfmt -d scripts/*.sh
+```
 
 Run the release script tests:
 
