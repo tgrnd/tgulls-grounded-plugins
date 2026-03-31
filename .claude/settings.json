@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(shellcheck *)",
+      "Bash(shfmt *)",
+      "Bash(sh scripts/verify_release.sh)",
+      "Bash(sh scripts/update_readme.sh)"
+    ],
+    "ask": [
+      "Bash(sh scripts/update_plugin.sh)"
+    ]
+  }
+}
