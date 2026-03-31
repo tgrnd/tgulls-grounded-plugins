@@ -61,7 +61,7 @@ Example: `release/my-plugin-v1.2.3`
 Run the update script to modify `marketplace.json`:
 
 ```bash
-sh scripts/update-plugin.sh --plugin=<plugin> --version=<version>
+sh scripts/update_plugin.sh --plugin=<plugin> --version=<version>
 ```
 
 **Critical step:** After running this command:
@@ -72,7 +72,7 @@ sh scripts/update-plugin.sh --plugin=<plugin> --version=<version>
 If using a non-standard source ref (not `v<version>`):
 
 ```bash
-sh scripts/update-plugin.sh --plugin=<plugin> --version=<version> --ref=<custom-ref>
+sh scripts/update_plugin.sh --plugin=<plugin> --version=<version> --ref=<custom-ref>
 ```
 
 ### 5. Verify Release
@@ -80,7 +80,7 @@ sh scripts/update-plugin.sh --plugin=<plugin> --version=<version> --ref=<custom-
 Run verification to ensure the plugin version is available at its source:
 
 ```bash
-sh scripts/verify-release.sh
+sh scripts/verify_release.sh
 ```
 
 **Critical gates:**
@@ -96,7 +96,7 @@ If verification PASSES, proceed to the next step.
 Regenerate the plugin table in the README:
 
 ```bash
-sh scripts/update-readme.sh
+sh scripts/update_readme.sh
 ```
 
 This updates the plugin listing based on the modified `marketplace.json`.

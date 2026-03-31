@@ -16,13 +16,13 @@ This document describes how to release a new plugin version or add a new plugin 
 For an existing plugin version bump:
 
 ```sh
-sh scripts/update-plugin.sh --plugin=<name> --version=<version>
+sh scripts/update_plugin.sh --plugin=<name> --version=<version>
 ```
 
 This sets `version` and defaults `source.ref` to `v<version>`. To use a different ref:
 
 ```sh
-sh scripts/update-plugin.sh --plugin=<name> --version=<version> --ref=<ref>
+sh scripts/update_plugin.sh --plugin=<name> --version=<version> --ref=<ref>
 ```
 
 For a new plugin, add the entry manually to `.claude-plugin/marketplace.json` following the existing pattern.
@@ -30,7 +30,7 @@ For a new plugin, add the entry manually to `.claude-plugin/marketplace.json` fo
 ### 2. Verify the release
 
 ```sh
-sh scripts/verify-release.sh
+sh scripts/verify_release.sh
 ```
 
 This confirms for every GitHub-sourced plugin:
@@ -42,7 +42,7 @@ Fix any errors before proceeding. Do not merge until this passes.
 ### 3. Update README
 
 ```sh
-sh scripts/update-readme.sh
+sh scripts/update_readme.sh
 ```
 
 Regenerates the plugin table from `marketplace.json`.
@@ -78,6 +78,6 @@ git push --tags
 
 | Script | Purpose |
 |--------|---------|
-| `scripts/update-plugin.sh` | Update plugin version + ref in marketplace.json |
-| `scripts/verify-release.sh` | Verify plugin versions are available at their sources |
-| `scripts/update-readme.sh` | Regenerate README plugin table |
+| `scripts/update_plugin.sh` | Update plugin version + ref in marketplace.json |
+| `scripts/verify_release.sh` | Verify plugin versions are available at their sources |
+| `scripts/update_readme.sh` | Regenerate README plugin table |
