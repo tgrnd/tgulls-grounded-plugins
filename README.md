@@ -7,7 +7,7 @@ Personal Claude Code marketplace for externally-hosted plugins.
 <!-- plugins-start -->
 | Plugin | Description | Version |
 |--------|-------------|---------|
-| [docile](https://github.com/tgrnd/docile) | Default filesystem conventions for docs/ | `0.2.0-dev` |
+| [docile](https://github.com/tgrnd/docile) | Default filesystem conventions for docs/ | `0.3.0-dev` |
 <!-- plugins-end -->
 
 ## Install
