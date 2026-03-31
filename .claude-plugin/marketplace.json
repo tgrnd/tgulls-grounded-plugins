@@ -1,0 +1,23 @@
+{
+  "name": "tgulls-grounded-plugins",
+  "description": "[tgulls] Grounded Plugins for Claude Code",
+  "owner": {
+    "name": "tgulls"
+  },
+  "plugins": [
+    {
+      "name": "docile",
+      "description": "Default filesystem conventions for docs/",
+      "version": "0.2.0-dev",
+      "author": {
+        "name": "tgulls"
+      },
+      "source": {
+        "source": "github",
+        "repo": "tgrnd/docile",
+        "ref": "0.2.0-dev"
+      },
+      "category": "documentation"
+    }
+  ]
+}
