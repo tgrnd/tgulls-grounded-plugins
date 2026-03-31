@@ -10,10 +10,29 @@ Personal Claude Code marketplace for externally-hosted plugins.
 | [docile](https://github.com/tgrnd/docile) | Default filesystem conventions for docs/ | `0.2.0-dev` |
 <!-- plugins-end -->
 
-## Usage
+## Install
+
+Add the marketplace via CLI command:
+
+```sh
+claude plugin marketplace add https://github.com/tgrnd/tgulls-grounded-plugins
+```
+
+Or via Claude Code slash command:
 
 ```
-/plugin marketplace add tgrnd/tgulls-grounded-plugins
+/plugin marketplace add https://github.com/tgrnd/tgulls-grounded-plugins
+```
+
+Then install a plugin via CLI command:
+
+```sh
+claude plugin install <plugin-name>@tgulls-grounded-plugins
+```
+
+Or via Claude Code slash command:
+
+```
 /plugin install <plugin-name>@tgulls-grounded-plugins
 ```
 
