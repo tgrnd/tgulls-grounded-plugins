@@ -8,14 +8,14 @@
     {
       "name": "docile",
       "description": "Default filesystem conventions for docs/",
-      "version": "0.2.0-dev",
+      "version": "0.3.0-dev",
       "author": {
         "name": "tgulls"
       },
       "source": {
         "source": "github",
         "repo": "tgrnd/docile",
-        "ref": "v0.2.0-dev"
+        "ref": "v0.3.0-dev"
       },
       "category": "documentation"
     }
