@@ -11,7 +11,17 @@ This document describes how to release a new plugin version or add a new plugin 
 
 ## Steps
 
-### 1. Update marketplace.json
+### 1. Check available tags
+
+List recent tags for the plugin you're releasing:
+
+```sh
+gh api repos/<owner>/<repo>/tags --jq '.[].name' | head -10
+```
+
+This helps identify the current latest version and confirm the tag you plan to pin exists. Useful when bumping to the next minor or patch version.
+
+### 2. Update marketplace.json
 
 For an existing plugin version bump:
 
@@ -27,7 +37,7 @@ sh scripts/update_plugin.sh --plugin=<name> --version=<version> --ref=<ref>
 
 For a new plugin, add the entry manually to `.claude-plugin/marketplace.json` following the existing pattern.
 
-### 2. Verify the release
+### 3. Verify the release
 
 ```sh
 sh scripts/verify_release.sh
@@ -39,7 +49,7 @@ This confirms for every GitHub-sourced plugin:
 
 Fix any errors before proceeding. Do not merge until this passes.
 
-### 3. Update README
+### 4. Update README
 
 ```sh
 sh scripts/update_readme.sh
@@ -47,7 +57,7 @@ sh scripts/update_readme.sh
 
 Regenerates the plugin table from `marketplace.json`.
 
-### 4. Commit and open PR
+### 5. Commit and open PR
 
 Stage all changes as a single commit:
 
@@ -65,7 +75,7 @@ gh pr create --title "release: <plugin> v<version>"
 
 Merge using **squash** to keep a clean single commit on `main`.
 
-### 5. Post-merge (optional)
+### 6. Post-merge (optional)
 
 After merging, tag the marketplace repo if tracking releases:
 

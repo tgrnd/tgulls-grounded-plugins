@@ -24,10 +24,11 @@
 #
 # Dependencies:
 #   jq, mktemp
+#   gh (optional, for tag existence warning)
 #
 ###
 # Name: update-plugin
-# Version: 0.1.0
+# Version: 0.2.0
 # Date: 2026-03-31
 # Author: tgulls
 # License: MIT
@@ -86,6 +87,14 @@ found=$(jq -r --arg name "$PLUGIN" '.plugins[] | select(.name == $name) | .name'
 if [ -z "$found" ]; then
   printf 'error: plugin "%s" not found in %s\n' "$PLUGIN" "$MARKETPLACE" >&2
   exit 2
+fi
+
+# Warn if the target ref does not exist on the source repo (non-blocking)
+repo=$(jq -r --arg name "$PLUGIN" '.plugins[] | select(.name == $name) | .source.repo // empty' "$MARKETPLACE")
+if [ -n "$repo" ] && command -v gh > /dev/null 2>&1; then
+  if ! gh api "repos/${repo}/git/ref/tags/${REF}" > /dev/null 2>&1; then
+    printf 'warning: tag "%s" not found on %s\n' "$REF" "$repo" >&2
+  fi
 fi
 
 TMPFILE=$(mktemp "${TMPDIR:-/tmp}/update-plugin.XXXXXX")
