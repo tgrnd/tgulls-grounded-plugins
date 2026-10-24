@@ -8,6 +8,7 @@ Personal Claude Code marketplace for externally-hosted plugins.
 | Plugin | Description | Version |
 |--------|-------------|---------|
 | [docile](https://github.com/tgrnd/docile) | Default filesystem conventions for docs/ | `0.3.0-dev` |
+| [git-wt](https://github.com/tgrnd/git-wt) | Keeps Claude Code's worktrees, and git worktree add, outside the checkout | `0.2.0` |
 <!-- plugins-end -->
 
 ## Install

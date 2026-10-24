@@ -18,6 +18,20 @@
         "ref": "v0.3.0-dev"
       },
       "category": "documentation"
+    },
+    {
+      "name": "git-wt",
+      "description": "Keeps Claude Code's worktrees, and git worktree add, outside the checkout",
+      "version": "0.2.0",
+      "author": {
+        "name": "tgulls"
+      },
+      "source": {
+        "source": "github",
+        "repo": "tgrnd/git-wt",
+        "ref": "v0.2.0"
+      },
+      "category": "development"
     }
   ]
 }
